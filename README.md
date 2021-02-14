@@ -17,6 +17,55 @@ There are two ways to create projects in .NET, one is using Visual Studio and an
 * Visual Studio 2019
 * .NET CLI
 
+## .NET CLI commands
+
+The following commands are used to build the projects in 'CreatedWithCli' folder.
+
+```
+mkdir CreatedWithCli
+
+dotnet new sln --name CreatedWithCli
+
+mkdir CreatedWithCli.Lib
+cd CreatedWithCli.Lib
+dotnet new classlib
+
+cd..
+
+mkdir CreatedWithCli.LibTest
+cd CreatedWithCli.LibTest
+dotnet new xunit
+dotnet add reference ..\CreatedWithCli.Lib\CreatedWithCli.Lib.csproj
+
+cd..
+
+mkdir CreatedWithCli.WebApp
+cd CreatedWithCli.WebApp
+dotnet new mvc
+dotnet add reference ..\CreatedWithCli.Lib\CreatedWithCli.Lib.csproj
+
+cd..
+
+mkdir CreatedWithCli.WebAppTest
+cd CreatedWithCli.WebAppTest
+dotnet new xunit
+dotnet add reference ..\CreatedWithCli.WebApp\CreatedWithCli.WebApp.csproj
+dotnet add package Moq
+
+cd..
+
+dotnet sln add CreatedWithCli.Lib\CreatedWithCli.Lib.csproj
+dotnet sln add CreatedWithCli.LibTest\CreatedWithCli.LibTest.csproj
+dotnet sln add CreatedWithCli.WebApp\CreatedWithCli.WebApp.csproj
+dotnet sln add CreatedWithCli.WebAppTest\CreatedWithCli.WebAppTest.csproj
+
+dotnet restore
+
+dotnet build
+
+dotnet test
+```
+
 ## Contribution
 
 If you want to contribute in this repo then create an issue and let me know how you want to contribute.
