@@ -1,31 +1,21 @@
-# Api health check
+# Create .NET projects with Visual Studio and CLI
 
-![.NET](https://github.com/Arnab-Developer/api-health-check/workflows/.NET/badge.svg?branch=main)
-
-This is a small utility app to check api health in a perticular time interval. Add the details of the apis in configuration (like appsettings) to check their health. This is a background task application with .NET (with DI, logging, configuration) to check api health.
-
-To write tasks which runs in background, I always used Windows Task Scheduler or Windows Service. But ASP.NET Core is now more cross platform and these solutions are only for Windows. So recently I found a more cross platform solution which is ASP.NET Core background tasks.
-
-[Implement background tasks in microservices with IHostedService and the BackgroundService class | Microsoft Docs]: https://docs.microsoft.com/en-us/dotnet/architecture/microservices/multi-container-microservice-net-applications/background-tasks-with-ihostedservice
-
-For hosting I have below options:
-
-* I can use a VM and deploy my app as a self contained application in a folder. Run the exe file in it.
-* I can use a VM and install .NET 5 runtime just to run a console application. Deploy my application in a folder. I can open a terminal and use `dotnet myapp.dll` to run it.
-* I can put the app in a container and deploy in azure container instance or app service or kubernetes. I can put the container image in Docker Hub or Azure Container registry.
+There are two ways to create projects in .NET, one is using Visual Studio and another is CLI. In this repo there is a folder named 'CreatedWithVs' in that all the projects are created with Visual Studio 2019 and another folder named 'CreatedWithCli' in that all the projects are created with CLI.
 
 ## Solution structure
 
-* Core functionality to check api health in class lib.
-* Console app to host the background task to check api health using the core functionality in the class lib.
-* Unit test.
+* Class library
+* Web application in MVC
+* Unit test for class library
+* Unit test for web application
 
 ## Tech stack
 
 * .NET 5
 * C# 9
-* xunit for unit testing
+* xUnit for unit testing
 * Visual Studio 2019
+* .NET CLI
 
 ## Contribution
 
