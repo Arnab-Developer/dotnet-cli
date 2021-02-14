@@ -1,5 +1,8 @@
 # Create .NET projects with Visual Studio and CLI
 
+![build test created with vs](https://github.com/Arnab-Developer/dotnet-cli/workflows/build%20test%20created%20with%20vs/badge.svg)
+![build test created with cli](https://github.com/Arnab-Developer/dotnet-cli/workflows/build%20test%20created%20with%20cli/badge.svg)
+
 There are two ways to create projects in .NET, one is using Visual Studio and another is CLI. In this repo there is a folder named 'CreatedWithVs' in that all the projects are created with Visual Studio 2019 and another folder named 'CreatedWithCli' in that all the projects are created with CLI.
 
 ## Solution structure
